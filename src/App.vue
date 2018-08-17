@@ -27,6 +27,11 @@
             <v-list-tile-title>Admin</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
+        <v-list-tile to="login">
+          <v-list-tile-content>
+            <v-list-tile-title>Login</v-list-tile-title>
+          </v-list-tile-content>
+        </v-list-tile>
       </v-list>
     </v-navigation-drawer>
     <v-toolbar app color="indigo" dark>
@@ -37,6 +42,8 @@
         <v-btn to="home" flat>Home</v-btn>
         <v-btn to="submit" flat>Submit</v-btn>
         <v-btn to="admin" flat>Admin</v-btn>
+        <v-btn v-if="!currentUser" to="login" flat>Login</v-btn>
+        <v-btn v-if="currentUser" @click="logout" flat>Logout</v-btn>
       </v-toolbar-items>
     </v-toolbar>
     <v-content>
@@ -53,6 +60,10 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
+
+const fb = require('./firebase.js');
+
 export default {
   name: 'App',
   data() {
@@ -60,8 +71,23 @@ export default {
       drawer: null,
     };
   },
+  methods: {
+    logout() {
+      fb.auth
+        .signOut()
+        .then(() => {
+          this.$store.dispatch('clearData');
+          this.$router.push('/login');
+        })
+        // eslint-disable-next-line
+        .catch(err => {
+          // eslint-disable-next-line
+          console.log(err);
+        });
+    },
+  },
+  computed: {
+    ...mapState(['currentUser']),
+  },
 };
 </script>
-
-<style>
-</style>

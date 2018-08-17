@@ -1,7 +1,7 @@
 import firebase from 'firebase';
 
 const config = {
-  apiKey: process.env.FIREBASE_API_KEY,
+  apiKey: process.env.FIREBASE,
   authDomain: 'crmd-18-stuco.firebaseapp.com',
   databaseURL: 'https://crmd-18-stuco.firebaseio.com',
   projectId: 'crmd-18-stuco',

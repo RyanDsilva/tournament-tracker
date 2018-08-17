@@ -4,10 +4,9 @@
 
 <script>
 export default {
-  name: 'Index'
-}
+  name: 'Admin',
+};
 </script>
 
 <style>
-
 </style>

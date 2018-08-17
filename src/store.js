@@ -5,22 +5,26 @@ const fb = require('./firebase');
 
 Vue.use(Vuex);
 
+// eslint-disable-next-line
 fb.auth.onAuthStateChanged(user => {
   if (user) {
+    // eslint-disable-next-line
     store.commit('setCurrentUser', user);
     // realtime updates from our posts collection
     fb.scores
       .orderBy('dnum', 'desc')
       // eslint-disable-next-line
       .onSnapshot(querySnapshot => {
+        // eslint-disable-next-line
         let scoresList = [];
-
+        // eslint-disable-next-line
         querySnapshot.forEach(doc => {
+          // eslint-disable-next-line
           let score = doc.data();
           score.id = doc.id;
           scoresList.push(score);
         });
-
+        // eslint-disable-next-line
         store.commit('setScores', scoresList);
       });
   }

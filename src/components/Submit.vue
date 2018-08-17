@@ -1,6 +1,7 @@
 <template>
   <v-layout row wrap align-content-center>
     <v-form ref="form" v-model="valid" lazy-validation class="score-form">
+      <v-text-field v-model="dnum" :rules="dnumRules" label="Debate No." required></v-text-field>
       <v-flex xs12>
         <v-text-field v-model="prop" :rules="nameRules" :counter="5" label="Team Code Proposition" required></v-text-field>
         <v-text-field v-model="pscore" :rules="scoreRules" :counter="2" label="Score" required></v-text-field>
@@ -24,6 +25,7 @@ export default {
   name: 'Submit',
   data: () => ({
     valid: true,
+    dnum: '',
     prop: '',
     opp: '',
     pscore: '',
@@ -34,8 +36,11 @@ export default {
     ],
     scoreRules: [
       v => !!v || 'Score is required',
-      v =>
-        (v && v.length === 2 && v <= 20) || 'Team Score must be less than 20',
+      v => (v && v.length <= 2 && v <= 20) || 'Team Score must be less than 20',
+    ],
+    dnumRules: [
+      v => !!v || 'Debate Number is required',
+      v => (v && v.length <= 2 && v >= 1) || 'Enter Valid Debate Number!',
     ],
   }),
 
@@ -44,6 +49,7 @@ export default {
       if (this.$refs.form.validate()) {
         fb.scores
           .add({
+            dnum: this.dnum,
             prop: this.prop,
             pscore: this.pscore,
             opp: this.opp,

@@ -3,6 +3,7 @@
     <h2 class="my-2 text-xs-center">RESULTS</h2>
     <v-data-table :headers="headers" :items="scores" hide-actions class="elevation-1">
       <template slot="items" slot-scope="props">
+        <td class="text-xs-center">{{ props.item.dnum }}</td>
         <td class="text-xs-center">{{ props.item.prop }}</td>
         <td class="text-xs-center">{{ props.item.pscore }}</td>
         <td class="text-xs-center">{{ props.item.opp }}</td>
@@ -23,6 +24,12 @@ export default {
   data() {
     return {
       headers: [
+        {
+          text: 'Debate No.',
+          align: 'center',
+          sortable: true,
+          value: 'dnum',
+        },
         {
           text: 'Proposition',
           align: 'center',

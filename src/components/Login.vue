@@ -10,16 +10,18 @@
         submit
       </v-btn>
     </v-form>
-    <transition name="fade">
-      <div v-if="performingRequest">
-        <p>Loading...</p>
-      </div>
-    </transition>
-    <transition name="fade">
-      <div v-if="errorMsg !== ''" class="error-msg">
-        <p>{{ errorMsg }}</p>
-      </div>
-    </transition>
+    <v-container>
+      <transition name="fade">
+        <v-alert :value="performingRequest" type="info">
+          Please Wait... Logging You In...
+        </v-alert>
+      </transition>
+      <transition name="fade">
+        <v-alert :value="errorMsg !== ''" type="error">
+          {{ errorMsg }}
+        </v-alert>
+      </transition>
+    </v-container>
   </div>
 </template>
 

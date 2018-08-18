@@ -56,7 +56,7 @@
         <router-view></router-view>
       </v-container>
     </v-content>
-    <v-footer app color="indigo" dark>
+    <v-footer color="indigo" dark>
       <v-spacer></v-spacer>
       &copy; 2018 Ryan Dsilva
       <v-spacer></v-spacer>

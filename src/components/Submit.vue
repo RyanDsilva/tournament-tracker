@@ -1,5 +1,17 @@
 <template>
   <v-layout row wrap align-content-center>
+    <v-container>
+      <transition name="fade">
+        <v-alert :value="performingRequest" type="info">
+          Please Wait... Submitting Results to Server...
+        </v-alert>
+      </transition>
+      <transition name="fade">
+        <v-alert :value="errorMsg !== ''" type="error">
+          {{ errorMsg }}
+        </v-alert>
+      </transition>
+    </v-container>
     <v-form ref="form" v-model="valid" lazy-validation class="score-form">
       <v-text-field v-model="dnum" :rules="dnumRules" label="Debate No." required></v-text-field>
       <v-tabs slider-color="yellow" dark color="indigo" centered grow>
@@ -40,6 +52,8 @@ const fb = require('../firebase.js');
 export default {
   name: 'Submit',
   data: () => ({
+    performingRequest: false,
+    errorMsg: '',
     valid: true,
     dnum: '',
     prop: '',
@@ -95,6 +109,7 @@ export default {
           .catch(err => {
             // eslint-disable-next-line
             console.log(err);
+            this.errorMsg = err.message;
           });
       }
     },
@@ -112,7 +127,7 @@ export default {
 <style scoped lang="scss">
 .score-form {
   width: 85%;
-  margin: 2em auto;
+  margin: 1em auto;
 }
 .action-btn {
   margin: 0 auto;

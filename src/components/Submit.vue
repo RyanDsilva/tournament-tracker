@@ -2,23 +2,39 @@
   <v-layout row wrap align-content-center>
     <v-form ref="form" v-model="valid" lazy-validation class="score-form">
       <v-text-field v-model="dnum" :rules="dnumRules" label="Debate No." required></v-text-field>
-      <v-flex xs12>
-        <v-text-field v-model="prop" :rules="nameRules" :counter="5" label="Team Code Proposition" required></v-text-field>
-        <v-text-field v-model="pscore" :rules="scoreRules" :counter="2" label="Score" required></v-text-field>
-      </v-flex>
-      <v-flex xs12>
-        <v-text-field v-model="opp" :rules="nameRules" :counter="5" label="Team Code Opposition" required></v-text-field>
-        <v-text-field v-model="oscore" :rules="scoreRules" :counter="2" label="Score" required></v-text-field>
-      </v-flex>
-      <v-btn :disabled="!valid" @click="submit">
-        submit
-      </v-btn>
-      <v-btn @click="clear">clear</v-btn>
+      <v-tabs slider-color="yellow" dark color="indigo" centered grow>
+        <v-tab ripple>Proposition</v-tab>
+        <v-tab ripple>Opposition</v-tab>
+        <v-tab-item>
+          <v-text-field v-model="prop" :rules="nameRules" :counter="5" label="Team Code Proposition" required></v-text-field>
+          <v-text-field v-model="pScoreObj.f1" :rules="scoreRules" label="Field 1" required></v-text-field>
+          <v-text-field v-model="pScoreObj.f2" :rules="scoreRules" label="Field 2" required></v-text-field>
+          <v-text-field v-model="pScoreObj.f3" :rules="scoreRules" label="Field 3" required></v-text-field>
+          <v-text-field v-model="pScoreObj.f4" :rules="scoreRules" label="Field 4" required></v-text-field>
+          <v-text-field v-model="pScoreObj.f5" :rules="scoreRules" label="Field 5" required></v-text-field>
+        </v-tab-item>
+        <v-tab-item>
+          <v-text-field v-model="opp" :rules="nameRules" :counter="5" label="Team Code Opposition" required></v-text-field>
+          <v-text-field v-model="oScoreObj.f1" :rules="scoreRules" label="Field 1" required></v-text-field>
+          <v-text-field v-model="oScoreObj.f2" :rules="scoreRules" label="Field 2" required></v-text-field>
+          <v-text-field v-model="oScoreObj.f3" :rules="scoreRules" label="Field 3" required></v-text-field>
+          <v-text-field v-model="oScoreObj.f4" :rules="scoreRules" label="Field 4" required></v-text-field>
+          <v-text-field v-model="oScoreObj.f5" :rules="scoreRules" label="Field 5" required></v-text-field>
+        </v-tab-item>
+      </v-tabs>
+      <div class="action-btn">
+        <v-btn :disabled="!valid" @click="submit">
+          submit
+        </v-btn>
+        <v-btn @click="clear">clear</v-btn>
+      </div>
     </v-form>
   </v-layout>
 </template>
 
 <script>
+import calc from '../private/calc';
+
 const fb = require('../firebase.js');
 
 export default {
@@ -29,6 +45,20 @@ export default {
     prop: '',
     opp: '',
     pscore: '',
+    pScoreObj: {
+      f1: '',
+      f2: '',
+      f3: '',
+      f4: '',
+      f5: '',
+    },
+    oScoreObj: {
+      f1: '',
+      f2: '',
+      f3: '',
+      f4: '',
+      f5: '',
+    },
     oscore: '',
     nameRules: [
       v => !!v || 'Team Code is required',
@@ -36,7 +66,7 @@ export default {
     ],
     scoreRules: [
       v => !!v || 'Score is required',
-      v => (v && v.length <= 2 && v <= 20) || 'Team Score must be less than 20',
+      v => (v && v <= 4) || 'Score must be less than or equal to 4',
     ],
     dnumRules: [
       v => !!v || 'Debate Number is required',
@@ -47,6 +77,7 @@ export default {
   methods: {
     submit() {
       if (this.$refs.form.validate()) {
+        this.calculate();
         fb.scores
           .add({
             dnum: this.dnum,
@@ -70,13 +101,21 @@ export default {
     clear() {
       this.$refs.form.reset();
     },
+    calculate() {
+      this.pscore = calc(this.pScoreObj);
+      this.oscore = calc(this.oScoreObj);
+    },
   },
 };
 </script>
 
 <style scoped lang="scss">
 .score-form {
-  width: 75%;
+  width: 85%;
   margin: 2em auto;
+}
+.action-btn {
+  margin: 0 auto;
+  text-align: center;
 }
 </style>

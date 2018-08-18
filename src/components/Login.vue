@@ -6,9 +6,11 @@
     <v-form class="login-form-crmd">
       <v-text-field v-model="email" type="email" :rules="emailRules" label="E-mail" required validate-on-blur></v-text-field>
       <v-text-field v-model="password" type="password" :rules="passRules" label="Password" required validate-on-blur></v-text-field>
-      <v-btn class="my-4" @click="login">
-        submit
-      </v-btn>
+      <div class="action-btn">
+        <v-btn class="my-4" @click="login">
+          submit
+        </v-btn>
+      </div>
     </v-form>
     <v-container>
       <transition name="fade">
@@ -70,5 +72,9 @@ export default {
 .login-form-crmd {
   width: 75%;
   margin: 2em auto;
+}
+.action-btn {
+  margin: 0 auto;
+  text-align: center;
 }
 </style>

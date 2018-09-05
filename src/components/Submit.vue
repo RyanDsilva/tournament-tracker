@@ -1,17 +1,5 @@
 <template>
   <v-layout row wrap align-content-center>
-    <v-container>
-      <transition name="fade">
-        <v-alert :value="performingRequest" type="info">
-          Please Wait... Submitting Results to Server...
-        </v-alert>
-      </transition>
-      <transition name="fade">
-        <v-alert :value="errorMsg !== ''" type="error">
-          {{ errorMsg }}
-        </v-alert>
-      </transition>
-    </v-container>
     <v-form ref="form" v-model="valid" lazy-validation class="score-form">
       <v-text-field v-model="dnum" :rules="dnumRules" label="Debate No." required></v-text-field>
       <v-tabs slider-color="yellow" dark color="indigo" centered grow>
@@ -55,6 +43,18 @@
         <v-btn @click="clear">clear</v-btn>
       </div>
     </v-form>
+    <v-container>
+      <transition name="fade">
+        <v-alert :value="performingRequest" type="info">
+          Please Wait... Submitting Results to Server...
+        </v-alert>
+      </transition>
+      <transition name="fade">
+        <v-alert :value="errorMsg !== ''" type="error">
+          {{ errorMsg }}
+        </v-alert>
+      </transition>
+    </v-container>
   </v-layout>
 </template>
 

@@ -19,19 +19,33 @@
         <v-tab ripple>Opposition</v-tab>
         <v-tab-item>
           <v-text-field v-model="prop" :rules="nameRules" :counter="5" label="Team Code Proposition" required></v-text-field>
-          <v-text-field v-model="pScoreObj.f1" :rules="scoreRules" label="Field 1" required></v-text-field>
-          <v-text-field v-model="pScoreObj.f2" :rules="scoreRules" label="Field 2" required></v-text-field>
-          <v-text-field v-model="pScoreObj.f3" :rules="scoreRules" label="Field 3" required></v-text-field>
-          <v-text-field v-model="pScoreObj.f4" :rules="scoreRules" label="Field 4" required></v-text-field>
-          <v-text-field v-model="pScoreObj.f5" :rules="scoreRules" label="Field 5" required></v-text-field>
+          <h3>Judge 1</h3>
+          <v-text-field v-model="pScoreObj.judge1.f1" :rules="scoreRules" label="Field 1" required></v-text-field>
+          <v-text-field v-model="pScoreObj.judge1.f2" :rules="scoreRules" label="Field 2" required></v-text-field>
+          <v-text-field v-model="pScoreObj.judge1.f3" :rules="scoreRules" label="Field 3" required></v-text-field>
+          <v-text-field v-model="pScoreObj.judge1.f4" :rules="scoreRules" label="Field 4" required></v-text-field>
+          <v-text-field v-model="pScoreObj.judge1.f5" :rules="scoreRules" label="Field 5" required></v-text-field>
+          <h3>Judge 2</h3>
+          <v-text-field v-model="pScoreObj.judge2.f1" :rules="scoreRules" label="Field 1" required></v-text-field>
+          <v-text-field v-model="pScoreObj.judge2.f2" :rules="scoreRules" label="Field 2" required></v-text-field>
+          <v-text-field v-model="pScoreObj.judge2.f3" :rules="scoreRules" label="Field 3" required></v-text-field>
+          <v-text-field v-model="pScoreObj.judge2.f4" :rules="scoreRules" label="Field 4" required></v-text-field>
+          <v-text-field v-model="pScoreObj.judge2.f5" :rules="scoreRules" label="Field 5" required></v-text-field>
         </v-tab-item>
         <v-tab-item>
           <v-text-field v-model="opp" :rules="nameRules" :counter="5" label="Team Code Opposition" required></v-text-field>
-          <v-text-field v-model="oScoreObj.f1" :rules="scoreRules" label="Field 1" required></v-text-field>
-          <v-text-field v-model="oScoreObj.f2" :rules="scoreRules" label="Field 2" required></v-text-field>
-          <v-text-field v-model="oScoreObj.f3" :rules="scoreRules" label="Field 3" required></v-text-field>
-          <v-text-field v-model="oScoreObj.f4" :rules="scoreRules" label="Field 4" required></v-text-field>
-          <v-text-field v-model="oScoreObj.f5" :rules="scoreRules" label="Field 5" required></v-text-field>
+          <h3>Judge 1</h3>
+          <v-text-field v-model="oScoreObj.judge1.f1" :rules="scoreRules" label="Field 1" required></v-text-field>
+          <v-text-field v-model="oScoreObj.judge1.f2" :rules="scoreRules" label="Field 2" required></v-text-field>
+          <v-text-field v-model="oScoreObj.judge1.f3" :rules="scoreRules" label="Field 3" required></v-text-field>
+          <v-text-field v-model="oScoreObj.judge1.f4" :rules="scoreRules" label="Field 4" required></v-text-field>
+          <v-text-field v-model="oScoreObj.judge1.f5" :rules="scoreRules" label="Field 5" required></v-text-field>
+          <h3>Judge 2</h3>
+          <v-text-field v-model="oScoreObj.judge2.f1" :rules="scoreRules" label="Field 1" required></v-text-field>
+          <v-text-field v-model="oScoreObj.judge2.f2" :rules="scoreRules" label="Field 2" required></v-text-field>
+          <v-text-field v-model="oScoreObj.judge2.f3" :rules="scoreRules" label="Field 3" required></v-text-field>
+          <v-text-field v-model="oScoreObj.judge2.f4" :rules="scoreRules" label="Field 4" required></v-text-field>
+          <v-text-field v-model="oScoreObj.judge2.f5" :rules="scoreRules" label="Field 5" required></v-text-field>
         </v-tab-item>
       </v-tabs>
       <div class="action-btn">
@@ -60,19 +74,38 @@ export default {
     opp: '',
     pscore: '',
     pScoreObj: {
-      f1: '',
-      f2: '',
-      f3: '',
-      f4: '',
-      f5: '',
+      judge1: {
+        f1: '',
+        f2: '',
+        f3: '',
+        f4: '',
+        f5: '',
+      },
+      judge2: {
+        f1: '',
+        f2: '',
+        f3: '',
+        f4: '',
+        f5: '',
+      },
     },
     oScoreObj: {
-      f1: '',
-      f2: '',
-      f3: '',
-      f4: '',
-      f5: '',
+      judge1: {
+        f1: '',
+        f2: '',
+        f3: '',
+        f4: '',
+        f5: '',
+      },
+      judge2: {
+        f1: '',
+        f2: '',
+        f3: '',
+        f4: '',
+        f5: '',
+      },
     },
+
     oscore: '',
     nameRules: [
       v => !!v || 'Team Code is required',
@@ -91,6 +124,7 @@ export default {
   methods: {
     submit() {
       if (this.$refs.form.validate()) {
+        this.performingRequest = true;
         this.calculate();
         fb.scores
           .add({
@@ -103,6 +137,7 @@ export default {
           // eslint-disable-next-line
           .then(ref => {
             this.clear();
+            this.performingRequest = false;
             this.$router.push('/home');
           })
           // eslint-disable-next-line

@@ -10,7 +10,7 @@ fb.auth.onAuthStateChanged(user => {
   if (user) {
     // eslint-disable-next-line
     store.commit('setCurrentUser', user);
-    // realtime updates from our posts collection
+    // realtime updates from our scores collection
     fb.scores
       .orderBy('dnum', 'desc')
       // eslint-disable-next-line

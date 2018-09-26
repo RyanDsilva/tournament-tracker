@@ -218,32 +218,28 @@ export default {
   methods: {
     submit() {
       if (this.$refs.form.validate()) {
-        if (this.prop != this.opp) {
-          this.performingRequest = true;
-          this.calculate();
-          fb.scores
-            .add({
-              dnum: this.dnum,
-              prop: this.prop,
-              pscore: this.pscore,
-              opp: this.opp,
-              oscore: this.oscore,
-            })
+        this.performingRequest = true;
+        this.calculate();
+        fb.scores
+          .add({
+            dnum: this.dnum,
+            prop: this.prop,
+            pscore: this.pscore,
+            opp: this.opp,
+            oscore: this.oscore,
+          })
+          // eslint-disable-next-line
+          .then(ref => {
+            this.clear();
+            this.performingRequest = false;
+            this.$router.push('/home');
+          })
+          // eslint-disable-next-line
+          .catch(err => {
             // eslint-disable-next-line
-            .then(ref => {
-              this.clear();
-              this.performingRequest = false;
-              this.$router.push('/home');
-            })
-            // eslint-disable-next-line
-            .catch(err => {
-              // eslint-disable-next-line
-              console.log(err);
-              this.errorMsg = err.message;
-            });
-        } else {
-          this.errorMsg = 'Team Codes have to be different';
-        }
+            console.log(err);
+            this.errorMsg = err.message;
+          });
       }
     },
     clear() {

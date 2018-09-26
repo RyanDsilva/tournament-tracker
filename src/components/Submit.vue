@@ -1,5 +1,8 @@
 <template>
   <v-layout row wrap align-content-center>
+    <v-alert type="error" :value="this.prop == this.opp">
+      Team Codes Must Be Different
+    </v-alert>
     <v-form ref="form" v-model="valid" lazy-validation class="score-form">
       <v-text-field v-model="dnum" :rules="dnumRules" label="Debate No." required></v-text-field>
       <v-tabs slider-color="yellow" dark color="indigo" centered grow>
@@ -215,28 +218,32 @@ export default {
   methods: {
     submit() {
       if (this.$refs.form.validate()) {
-        this.performingRequest = true;
-        this.calculate();
-        fb.scores
-          .add({
-            dnum: this.dnum,
-            prop: this.prop,
-            pscore: this.pscore,
-            opp: this.opp,
-            oscore: this.oscore,
-          })
-          // eslint-disable-next-line
-          .then(ref => {
-            this.clear();
-            this.performingRequest = false;
-            this.$router.push('/home');
-          })
-          // eslint-disable-next-line
-          .catch(err => {
+        if (this.prop != this.opp) {
+          this.performingRequest = true;
+          this.calculate();
+          fb.scores
+            .add({
+              dnum: this.dnum,
+              prop: this.prop,
+              pscore: this.pscore,
+              opp: this.opp,
+              oscore: this.oscore,
+            })
             // eslint-disable-next-line
-            console.log(err);
-            this.errorMsg = err.message;
-          });
+            .then(ref => {
+              this.clear();
+              this.performingRequest = false;
+              this.$router.push('/home');
+            })
+            // eslint-disable-next-line
+            .catch(err => {
+              // eslint-disable-next-line
+              console.log(err);
+              this.errorMsg = err.message;
+            });
+        } else {
+          this.errorMsg = 'Team Codes have to be different';
+        }
       }
     },
     clear() {

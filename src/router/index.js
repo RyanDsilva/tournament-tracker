@@ -5,7 +5,6 @@ import Home from '@/components/Home';
 import Submit from '@/components/Submit';
 import Admin from '@/components/Admin';
 import Login from '@/components/Login';
-import Table from '@/components/Table';
 
 Vue.use(Router);
 
@@ -29,14 +28,6 @@ const router = new Router({
       path: '/admin',
       name: 'admin',
       component: Admin,
-      meta: {
-        requiresAuth: true,
-      },
-    },
-    {
-      path: '/table',
-      name: 'table',
-      component: Table,
       meta: {
         requiresAuth: true,
       },

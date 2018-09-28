@@ -6,13 +6,11 @@
         <h1>Fr. Conceicao Rodrigues Memorial Debate 2018</h1>
       </div>
       <v-divider class="my-2"></v-divider>
-      <h1 class="text-xs-center mb-2">Teams</h1>
+      <!-- <h1 class="text-xs-center mb-2">Teams</h1>
       <v-data-table :headers="theaders" :items="teams" hide-actions class="elevation-1">
         <template slot="items" slot-scope="props">
           <td class="text-xs-center">{{ props.item.teamcode }}</td>
-          <td class="text-xs-center">{{ props.item.name }}</td>
           <td class="text-xs-center">{{ props.item.tincharge }}</td>
-          <td class="text-xs-center">{{ props.item.contact }}</td>
         </template>
       </v-data-table>
       <h1 class="text-xs-center my-2">Rooms</h1>
@@ -21,9 +19,8 @@
           <td class="text-xs-center">{{ props.item.floor }}</td>
           <td class="text-xs-center">{{ props.item.room }}</td>
           <td class="text-xs-center">{{ props.item.rincharge }}</td>
-          <td class="text-xs-center">{{ props.item.contact }}</td>
         </template>
-      </v-data-table>
+      </v-data-table> -->
     </v-container>
   </div>
 </template>
@@ -40,9 +37,7 @@ export default {
           sortable: true,
           value: 'teamcode',
         },
-        { text: 'Name', value: 'name', align: 'center' },
         { text: 'Team In-charge', value: 'tincharge', align: 'center' },
-        { text: 'Contact', value: 'contact', align: 'center' },
       ],
       rheaders: [
         {
@@ -53,290 +48,217 @@ export default {
         },
         { text: 'Room', value: 'room', align: 'center' },
         { text: 'Room In-charge', value: 'rincharge', align: 'center' },
-        { text: 'Contact', value: 'contact', align: 'center' },
       ],
       rooms: [
         {
           value: false,
           floor: '5',
           room: 'Seminar Hall',
-          rincharge: 'Person',
-          contact: '9876543210',
+          rincharge: 'Pranay & Harkirat',
         },
         {
           value: false,
           floor: '5',
           room: '508',
-          rincharge: 'Person',
-          contact: '9876543210',
+          rincharge: 'Kevin',
         },
         {
           value: false,
           floor: '5',
           room: '511',
-          rincharge: 'Person',
-          contact: '9876543210',
+          rincharge: 'Surya',
         },
         {
           value: false,
           floor: '6',
           room: '606',
-          rincharge: 'Person',
-          contact: '9876543210',
+          rincharge: 'Riya',
         },
         {
           value: false,
           floor: '6',
           room: '607',
-          rincharge: 'Person',
-          contact: '9876543210',
+          rincharge: 'Nolita',
         },
         {
           value: false,
           floor: '7',
           room: '706',
-          rincharge: 'Person',
-          contact: '9876543210',
+          rincharge: 'Sakshi',
         },
         {
           value: false,
           floor: '7',
           room: '707',
-          rincharge: 'Person',
-          contact: '9876543210',
+          rincharge: 'Ridhika',
         },
         {
           value: false,
           floor: '7',
-          room: '711',
-          rincharge: 'Person',
-          contact: '9876543210',
+          room: '701',
+          rincharge: 'Sanfer',
         },
       ],
       teams: [
         {
           value: false,
           teamcode: 'CMD01',
-          name: 'Team',
-          tincharge: 'Person',
-          contact: '9876543210',
+          tincharge: 'Sherwyn Pillai',
         },
         {
           value: false,
           teamcode: 'CMD02',
-          name: 'Team',
-          tincharge: 'Person',
-          contact: '9876543210',
+          tincharge: 'Mayank Srivastava',
         },
         {
           value: false,
           teamcode: 'CMD03',
-          name: 'Team',
-          tincharge: 'Person',
-          contact: '9876543210',
+          tincharge: 'Franky Pinto',
         },
         {
           value: false,
           teamcode: 'CMD04',
-          name: 'Team',
-          tincharge: 'Person',
-          contact: '9876543210',
+          tincharge: 'Harsh Singhania',
         },
         {
           value: false,
           teamcode: 'CMD05',
-          name: 'Team',
-          tincharge: 'Person',
-          contact: '9876543210',
+          tincharge: 'Nirav Sthalekar',
         },
         {
           value: false,
           teamcode: 'CMD06',
-          name: 'Team',
-          tincharge: 'Person',
-          contact: '9876543210',
+          tincharge: 'Ethan Pallani',
         },
         {
           value: false,
           teamcode: 'CMD07',
-          name: 'Team',
-          tincharge: 'Person',
-          contact: '9876543210',
+          tincharge: 'Nachiket Nisal',
         },
         {
           value: false,
           teamcode: 'CMD08',
-          name: 'Team',
-          tincharge: 'Person',
-          contact: '9876543210',
+          tincharge: 'Allen Xavier',
         },
         {
           value: false,
           teamcode: 'CMD09',
-          name: 'Team',
-          tincharge: 'Person',
-          contact: '9876543210',
+          tincharge: 'Abhishek Gupta',
         },
         {
           value: false,
           teamcode: 'CMD10',
-          name: 'Team',
           tincharge: 'Person',
-          contact: '9876543210',
         },
         {
           value: false,
           teamcode: 'CMD11',
-          name: 'Team',
-          tincharge: 'Person',
-          contact: '9876543210',
+          tincharge: 'Ankit Jha',
         },
         {
           value: false,
           teamcode: 'CMD12',
-          name: 'Team',
           tincharge: 'Person',
-          contact: '9876543210',
         },
         {
           value: false,
           teamcode: 'CMD13',
-          name: 'Team',
-          tincharge: 'Person',
-          contact: '9876543210',
+          tincharge: 'Dylan Dsouza',
         },
         {
           value: false,
           teamcode: 'CMD14',
-          name: 'Team',
           tincharge: 'Person',
-          contact: '9876543210',
         },
         {
           value: false,
           teamcode: 'CMD15',
-          name: 'Team',
-          tincharge: 'Person',
-          contact: '9876543210',
+          tincharge: 'Shubham Bhate',
         },
         {
           value: false,
           teamcode: 'CMD16',
-          name: 'Team',
           tincharge: 'Person',
-          contact: '9876543210',
         },
         {
           value: false,
           teamcode: 'CMD17',
-          name: 'Team',
-          tincharge: 'Person',
-          contact: '9876543210',
+          tincharge: 'Saumeel Gabhare',
         },
         {
           value: false,
           teamcode: 'CMD18',
-          name: 'Team',
           tincharge: 'Person',
-          contact: '9876543210',
         },
         {
           value: false,
           teamcode: 'CMD19',
-          name: 'Team',
-          tincharge: 'Person',
-          contact: '9876543210',
+          tincharge: 'Mayank Mishra',
         },
         {
           value: false,
           teamcode: 'CMD20',
-          name: 'Team',
           tincharge: 'Person',
-          contact: '9876543210',
         },
         {
           value: false,
           teamcode: 'CMD21',
-          name: 'Team',
-          tincharge: 'Person',
-          contact: '9876543210',
+          tincharge: 'Mahesh Desai',
         },
         {
           value: false,
           teamcode: 'CMD22',
-          name: 'Team',
           tincharge: 'Person',
-          contact: '9876543210',
         },
         {
           value: false,
           teamcode: 'CMD23',
-          name: 'Team',
           tincharge: 'Person',
-          contact: '9876543210',
         },
         {
           value: false,
           teamcode: 'CMD24',
-          name: 'Team',
           tincharge: 'Person',
-          contact: '9876543210',
         },
         {
           value: false,
           teamcode: 'CMD25',
-          name: 'Team',
           tincharge: 'Person',
-          contact: '9876543210',
         },
         {
           value: false,
           teamcode: 'CMD26',
-          name: 'Team',
           tincharge: 'Person',
-          contact: '9876543210',
         },
         {
           value: false,
           teamcode: 'CMD27',
-          name: 'Team',
           tincharge: 'Person',
-          contact: '9876543210',
         },
         {
           value: false,
           teamcode: 'CMD28',
-          name: 'Team',
           tincharge: 'Person',
-          contact: '9876543210',
         },
         {
           value: false,
           teamcode: 'CMD29',
-          name: 'Team',
           tincharge: 'Person',
-          contact: '9876543210',
         },
         {
           value: false,
           teamcode: 'CMD30',
-          name: 'Team',
           tincharge: 'Person',
-          contact: '9876543210',
         },
         {
           value: false,
           teamcode: 'CMD31',
-          name: 'Team',
           tincharge: 'Person',
-          contact: '9876543210',
         },
         {
           value: false,
           teamcode: 'CMD32',
-          name: 'Team',
           tincharge: 'Person',
-          contact: '9876543210',
         },
       ],
     };

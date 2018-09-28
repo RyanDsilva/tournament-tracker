@@ -6,7 +6,7 @@
         <h1>Fr. Conceicao Rodrigues Memorial Debate 2018</h1>
       </div>
       <v-divider class="my-2"></v-divider>
-      <!-- <h1 class="text-xs-center mb-2">Teams</h1>
+      <h1 class="text-xs-center mb-2">Teams</h1>
       <v-data-table :headers="theaders" :items="teams" hide-actions class="elevation-1">
         <template slot="items" slot-scope="props">
           <td class="text-xs-center">{{ props.item.teamcode }}</td>
@@ -20,7 +20,7 @@
           <td class="text-xs-center">{{ props.item.room }}</td>
           <td class="text-xs-center">{{ props.item.rincharge }}</td>
         </template>
-      </v-data-table> -->
+      </v-data-table>
     </v-container>
   </div>
 </template>
@@ -128,7 +128,7 @@ export default {
         {
           value: false,
           teamcode: 'CMD06',
-          tincharge: 'Ethan Pallani',
+          tincharge: 'Neeraj Karande',
         },
         {
           value: false,
@@ -138,7 +138,7 @@ export default {
         {
           value: false,
           teamcode: 'CMD08',
-          tincharge: 'Allen Xavier',
+          tincharge: 'Ethan Pallani',
         },
         {
           value: false,
@@ -148,7 +148,7 @@ export default {
         {
           value: false,
           teamcode: 'CMD10',
-          tincharge: 'Person',
+          tincharge: 'Anurag Chavan',
         },
         {
           value: false,
@@ -158,7 +158,7 @@ export default {
         {
           value: false,
           teamcode: 'CMD12',
-          tincharge: 'Person',
+          tincharge: 'Maxwell Almeida',
         },
         {
           value: false,
@@ -168,7 +168,7 @@ export default {
         {
           value: false,
           teamcode: 'CMD14',
-          tincharge: 'Person',
+          tincharge: 'Pratik Chaudhary',
         },
         {
           value: false,
@@ -178,7 +178,7 @@ export default {
         {
           value: false,
           teamcode: 'CMD16',
-          tincharge: 'Person',
+          tincharge: 'Ayush Chaube',
         },
         {
           value: false,
@@ -188,7 +188,7 @@ export default {
         {
           value: false,
           teamcode: 'CMD18',
-          tincharge: 'Person',
+          tincharge: '',
         },
         {
           value: false,
@@ -198,67 +198,67 @@ export default {
         {
           value: false,
           teamcode: 'CMD20',
-          tincharge: 'Person',
+          tincharge: 'Ashish Kumar',
         },
         {
           value: false,
           teamcode: 'CMD21',
-          tincharge: 'Mahesh Desai',
+          tincharge: '',
         },
         {
           value: false,
           teamcode: 'CMD22',
-          tincharge: 'Person',
+          tincharge: '',
         },
         {
           value: false,
           teamcode: 'CMD23',
-          tincharge: 'Person',
+          tincharge: 'Mahesh Desai',
         },
         {
           value: false,
           teamcode: 'CMD24',
-          tincharge: 'Person',
+          tincharge: 'Swarup Saju',
         },
         {
           value: false,
           teamcode: 'CMD25',
-          tincharge: 'Person',
+          tincharge: 'Albin Tharayil',
         },
         {
           value: false,
           teamcode: 'CMD26',
-          tincharge: 'Person',
+          tincharge: 'Chyank Kumar',
         },
         {
           value: false,
           teamcode: 'CMD27',
-          tincharge: 'Person',
+          tincharge: 'Jeswin Thomas',
         },
         {
           value: false,
           teamcode: 'CMD28',
-          tincharge: 'Person',
+          tincharge: 'Roger Fernando',
         },
         {
           value: false,
           teamcode: 'CMD29',
-          tincharge: 'Person',
+          tincharge: 'Akhshaye Nair',
         },
         {
           value: false,
           teamcode: 'CMD30',
-          tincharge: 'Person',
+          tincharge: 'Abhiram Iyengar',
         },
         {
           value: false,
           teamcode: 'CMD31',
-          tincharge: 'Person',
+          tincharge: 'Samuel Matthew',
         },
         {
           value: false,
           teamcode: 'CMD32',
-          tincharge: 'Person',
+          tincharge: 'Gaurav Dashpute',
         },
       ],
     };

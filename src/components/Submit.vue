@@ -28,6 +28,13 @@
               <v-text-field type="number" v-model="pScoreObj.speaker1.judge2.f4" :rules="scoreRules" label="Engagement with Opposite Team" required></v-text-field>
               <v-text-field type="number" v-model="pScoreObj.speaker1.judge2.f5" :rules="scoreRules" label="Analysis" required></v-text-field>
               <v-text-field type="number" v-model="pScoreObj.speaker1.judge2.f6" :rules="scoreRules" label="Rapport established with Partner" required></v-text-field>
+              <h3>Judge 3</h3>
+              <v-text-field type="number" v-model="pScoreObj.speaker1.judge3.f1" :rules="scoreRules" label="Confidence" required></v-text-field>
+              <v-text-field type="number" v-model="pScoreObj.speaker1.judge3.f2" :rules="scoreRules" label="Organization Of Points" required></v-text-field>
+              <v-text-field type="number" v-model="pScoreObj.speaker1.judge3.f3" :rules="scoreRules" label="Quality Of Arguments" required></v-text-field>
+              <v-text-field type="number" v-model="pScoreObj.speaker1.judge3.f4" :rules="scoreRules" label="Engagement with Opposite Team" required></v-text-field>
+              <v-text-field type="number" v-model="pScoreObj.speaker1.judge3.f5" :rules="scoreRules" label="Analysis" required></v-text-field>
+              <v-text-field type="number" v-model="pScoreObj.speaker1.judge3.f6" :rules="scoreRules" label="Rapport established with Partner" required></v-text-field>
             </v-tab-item>
             <v-tab-item class="my-1">
               <h3>Judge 1</h3>
@@ -44,6 +51,13 @@
               <v-text-field type="number" v-model="pScoreObj.speaker2.judge2.f4" :rules="scoreRules" label="Engagement with Opposite Team" required></v-text-field>
               <v-text-field type="number" v-model="pScoreObj.speaker2.judge2.f5" :rules="scoreRules" label="Analysis" required></v-text-field>
               <v-text-field type="number" v-model="pScoreObj.speaker2.judge2.f6" :rules="scoreRules" label="Rapport established with Partner" required></v-text-field>
+              <h3>Judge 3</h3>
+              <v-text-field type="number" v-model="pScoreObj.speaker2.judge3.f1" :rules="scoreRules" label="Confidence" required></v-text-field>
+              <v-text-field type="number" v-model="pScoreObj.speaker2.judge3.f2" :rules="scoreRules" label="Organization Of Points" required></v-text-field>
+              <v-text-field type="number" v-model="pScoreObj.speaker2.judge3.f3" :rules="scoreRules" label="Quality Of Arguments" required></v-text-field>
+              <v-text-field type="number" v-model="pScoreObj.speaker2.judge3.f4" :rules="scoreRules" label="Engagement with Opposite Team" required></v-text-field>
+              <v-text-field type="number" v-model="pScoreObj.speaker2.judge3.f5" :rules="scoreRules" label="Analysis" required></v-text-field>
+              <v-text-field type="number" v-model="pScoreObj.speaker2.judge3.f6" :rules="scoreRules" label="Rapport established with Partner" required></v-text-field>
             </v-tab-item>
           </v-tabs>
         </v-tab-item>
@@ -67,6 +81,13 @@
               <v-text-field type="number" v-model="oScoreObj.speaker1.judge2.f4" :rules="scoreRules" label="Engagement with Opposite Team" required></v-text-field>
               <v-text-field type="number" v-model="oScoreObj.speaker1.judge2.f5" :rules="scoreRules" label="Analysis" required></v-text-field>
               <v-text-field type="number" v-model="oScoreObj.speaker1.judge2.f6" :rules="scoreRules" label="Rapport established with Partner" required></v-text-field>
+              <h3>Judge 3</h3>
+              <v-text-field type="number" v-model="oScoreObj.speaker1.judge3.f1" :rules="scoreRules" label="Confidence" required></v-text-field>
+              <v-text-field type="number" v-model="oScoreObj.speaker1.judge3.f2" :rules="scoreRules" label="Organization Of Points" required></v-text-field>
+              <v-text-field type="number" v-model="oScoreObj.speaker1.judge3.f3" :rules="scoreRules" label="Quality Of Arguments" required></v-text-field>
+              <v-text-field type="number" v-model="oScoreObj.speaker1.judge3.f4" :rules="scoreRules" label="Engagement with Opposite Team" required></v-text-field>
+              <v-text-field type="number" v-model="oScoreObj.speaker1.judge3.f5" :rules="scoreRules" label="Analysis" required></v-text-field>
+              <v-text-field type="number" v-model="oScoreObj.speaker1.judge3.f6" :rules="scoreRules" label="Rapport established with Partner" required></v-text-field>
             </v-tab-item>
             <v-tab-item class="my-1">
               <h3>Judge 1</h3>
@@ -83,6 +104,13 @@
               <v-text-field type="number" v-model="oScoreObj.speaker2.judge2.f4" :rules="scoreRules" label="Engagement with Opposite Team" required></v-text-field>
               <v-text-field type="number" v-model="oScoreObj.speaker2.judge2.f5" :rules="scoreRules" label="Analysis" required></v-text-field>
               <v-text-field type="number" v-model="oScoreObj.speaker2.judge2.f6" :rules="scoreRules" label="Rapport established with Partner" required></v-text-field>
+              <h3>Judge 3</h3>
+              <v-text-field type="number" v-model="oScoreObj.speaker2.judge3.f1" :rules="scoreRules" label="Confidence" required></v-text-field>
+              <v-text-field type="number" v-model="oScoreObj.speaker2.judge3.f2" :rules="scoreRules" label="Organization Of Points" required></v-text-field>
+              <v-text-field type="number" v-model="oScoreObj.speaker2.judge3.f3" :rules="scoreRules" label="Quality Of Arguments" required></v-text-field>
+              <v-text-field type="number" v-model="oScoreObj.speaker2.judge3.f4" :rules="scoreRules" label="Engagement with Opposite Team" required></v-text-field>
+              <v-text-field type="number" v-model="oScoreObj.speaker2.judge3.f5" :rules="scoreRules" label="Analysis" required></v-text-field>
+              <v-text-field type="number" v-model="oScoreObj.speaker2.judge3.f6" :rules="scoreRules" label="Rapport established with Partner" required></v-text-field>
             </v-tab-item>
           </v-tabs>
         </v-tab-item>
@@ -142,6 +170,14 @@ export default {
           f5: '',
           f6: '',
         },
+        judge3: {
+          f1: '',
+          f2: '',
+          f3: '',
+          f4: '',
+          f5: '',
+          f6: '',
+        },
       },
       speaker2: {
         judge1: {
@@ -153,6 +189,14 @@ export default {
           f6: '',
         },
         judge2: {
+          f1: '',
+          f2: '',
+          f3: '',
+          f4: '',
+          f5: '',
+          f6: '',
+        },
+        judge3: {
           f1: '',
           f2: '',
           f3: '',
@@ -180,6 +224,14 @@ export default {
           f5: '',
           f6: '',
         },
+        judge3: {
+          f1: '',
+          f2: '',
+          f3: '',
+          f4: '',
+          f5: '',
+          f6: '',
+        },
       },
       speaker2: {
         judge1: {
@@ -191,6 +243,14 @@ export default {
           f6: '',
         },
         judge2: {
+          f1: '',
+          f2: '',
+          f3: '',
+          f4: '',
+          f5: '',
+          f6: '',
+        },
+        judge3: {
           f1: '',
           f2: '',
           f3: '',
@@ -211,7 +271,7 @@ export default {
     ],
     dnumRules: [
       v => !!v || 'Debate Number is required',
-      v => (v && v.length <= 2 && v >= 1) || 'Enter Valid Debate Number!',
+      v => (v && v.length <= 3) || 'Enter Valid Debate Number!',
     ],
   }),
 
